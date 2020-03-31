@@ -25,8 +25,8 @@ namespace GvasFormat.Serialization.UETypes
         {
             var type = reader.ReadUEString();
             var id = new Guid(reader.ReadBytes(16));
-            if (id != Guid.Empty)
-                throw new FormatException($"Offset: 0x{reader.BaseStream.Position - 16:x8}. Expected struct ID {Guid.Empty}, but was {id}");
+            //if (id != Guid.Empty)
+            //    throw new FormatException($"Offset: 0x{reader.BaseStream.Position - 16:x8}. Expected struct ID {Guid.Empty}, but was {id}");
 
             var terminator = reader.ReadByte();
             if (terminator != 0)
